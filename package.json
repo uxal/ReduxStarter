@@ -1,0 +1,43 @@
+{
+  "name": "reduxstarter",
+  "version": "1.0.0",
+  "description": "Boilerplate for Redux apps",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxal/ReduxStarter.git"
+  },
+  "keywords": [
+    "redux",
+    "react"
+  ],
+  "author": "Dragos Lucian Lascu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uxal/ReduxStarter/issues"
+  },
+  "homepage": "https://github.com/uxal/ReduxStarter#readme",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-react": "^6.22.0",
+    "html-webpack-plugin": "^2.28.0",
+    "rimraf": "^2.5.4",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^4.0.0-beta.4",
+    "redux": "^3.6.0"
+  }
+}
