@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 //put the dependencies from package.json here. Contains the items which update less often
 const VENDOR_LIBS = [
-    'react', 'react-dom', 'react-router', 'redux'
+    'react', 'react-dom', 'react-router', 'redux', 'react-redux', 'redux-thunk'
 ];
 
 module.exports = {
@@ -35,7 +35,13 @@ module.exports = {
         //this plugin generates the index.html with the script chunks tags added automatically
         new HtmlWebpackPlugin({
             template: 'src/index.html'
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })
-    ]
-
+    ],
+    devServer: {
+        historyApiFallback: true,
+        contentBase: './'
+    }
 };
