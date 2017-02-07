@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 //put the dependencies from package.json here. Contains the items which update less often
 const VENDOR_LIBS = [
-    'react', 'react-dom', 'react-router', 'redux', 'react-redux', 'redux-thunk'
+    'react', 'react-dom', 'react-router', 'redux', 'react-redux', 'redux-thunk', 'react-tap-event-plugin', 'material-ui'
 ];
 
 module.exports = {

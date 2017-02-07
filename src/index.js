@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './styles/main.css';
 
 /*Import the components*/
 import AppRouting from './router';
