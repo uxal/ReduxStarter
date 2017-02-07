@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import styles from './header.css'
 
 class Header extends Component {
     render() {
         return (
-            <nav className="main-header">
-                <h1>This is the application header</h1>
+            <nav>
+                <h1 className={styles.mainHeader}>This is the application header</h1>
             </nav>
         )
     }

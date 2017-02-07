@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 //put the dependencies from package.json here. Contains the items which update less often
 const VENDOR_LIBS = [
@@ -23,6 +24,14 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/
 
+            },
+            {
+
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+                }),
+                test: /\.css$/
             }
         ]
     },
@@ -38,7 +47,8 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-        })
+        }),
+        new ExtractTextPlugin('style.css')
     ],
     devServer: {
         historyApiFallback: true,
