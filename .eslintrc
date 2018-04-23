@@ -1,0 +1,26 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env":{
+    "browser": true,
+    "es6": true,
+  },
+  "rules": {
+    "consistent-return": "off",
+    "no-use-before-define": ["error", { "functions": false }],
+    "no-underscore-dangle": ["error", { "allow": [ "_id" ] }],
+    "max-len":["error",{"code":100, "ignoreComments":true}],
+    "jsx-a11y/href-no-hash": "off",
+    "react/forbid-prop-types": ["error", { "forbid": ["any"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+    "react/jsx-tag-spacing":["off",{"beforeSelfClosing":"never"}],
+    "import/no-named-as-default":"off", /** https://github.com/benmosher/eslint-plugin-import/issues/544 **/
+    "import/no-named-as-default-member":"off",
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  }
+}

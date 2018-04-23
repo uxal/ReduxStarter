@@ -1,24 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import reduxThunk from 'redux-thunk';
+import { BrowserRouter } from 'react-router-dom';
+import App from './app'
 
-/**
- import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
- */
+import configureStore from './domain';
+const store = configureStore();
 
-/*Import the components*/
-import AppRouting from './router';
+const render = Component => {
+  ReactDOM.hydrate(
+    <AppContainer>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Component />
+        </BrowserRouter>
+      </Provider>
+    </AppContainer>,
+    document.querySelector('#app'),
+  );
+}
 
-import reducers from './reducers';
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
-const store = createStoreWithMiddleware(reducers);
+render(App)
 
-
-ReactDOM.render(
-    <Provider store={store}>
-        <AppRouting />
-    </Provider>,
-    document.getElementById('app')
-);
+// Webpack Hot Module Replacement API
+if (module.hot) {
+  console.log('re-rednering 1');
+  module.hot.accept('./app', () => {
+    render(App);
+    console.log('re-rendering 2');
+    // in all other cases - re-require App manually
+    render(require('./app'))
+  })
+}

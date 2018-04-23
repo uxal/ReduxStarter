@@ -1,9 +1,12 @@
 import { combineReducers } from 'redux';
-import testReducer from './test_reducer';
+import { reducer as formReducer } from 'redux-form';
+import { i18nReducer } from 'react-redux-i18n';
+// Import other reducers below
 
 const rootReducer = combineReducers({
-    /*Add the reducers in here*/
-    test: testReducer
+
+  form: formReducer,
+  i18n: i18nReducer,
 });
 
 export default rootReducer;

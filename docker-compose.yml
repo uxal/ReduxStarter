@@ -1,0 +1,11 @@
+version: '2'
+services:
+  app:
+    container_name: general-app-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    command: yarn run prod:docker
+    ports:
+      - "4500:4500"

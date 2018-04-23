@@ -1,7 +1,10 @@
 {
   "presets": [
-    "stage-1",
-    "babel-preset-env",
+    "env",
+    "stage-0",
     "react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel"
   ]
 }

@@ -1,0 +1,12 @@
+.test-style {
+  background: red;
+  color: yellow;
+}
+
+.image-style {
+  width: 200px;
+  height: 100px;
+  background: url(./imgs/test-image.jpg);
+  display: block;
+  background-size: contain;
+}
